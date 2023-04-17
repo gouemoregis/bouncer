@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+from app import secrets
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#rpd#kuw!w(zh*e@-o*vh!3idt)671w2-9&@fo!4on5tp5)i5v'
+# SECRET_KEY = 'django-insecure-#rpd#kuw!w(zh*e@-o*vh!3idt)671w2-9&@fo!4on5tp5)i5v'
+SECRET_KEY = secrets.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
@@ -45,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'app.datastore.NDBMiddleware',
+    # 'app.datastore.NDBMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
