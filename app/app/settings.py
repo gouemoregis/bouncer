@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'app.datastore.NDBMiddleware',
+    'app.datastore.NDBMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
